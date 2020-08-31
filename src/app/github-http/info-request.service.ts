@@ -15,14 +15,14 @@ export class InfoRequestService {
     this.username= "kevin3708"
   }
   userInfo(){
-    return this.http.get("https://api.github.com/users/" + this.username);
+    return this.http.get("https://api.github.com/users/" + this.username + "?access_token=" + this.api);
   }
 
   userRepo(){
-    return this.http.get("https://api.github.com/users/" + this.username + "/repos");
+    return this.http.get("https://api.github.com/users/" + this.username + "/repos" + "?access_token=" + this.api);
   }
 
   updateInput(username){
-this.username = username;
+this.username = username
   }
 }
