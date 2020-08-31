@@ -1,10 +1,36 @@
-<form>
-    <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Git Search">
-    <button (click)="searchProfile()" type="submit" class="btn btn-success btn sm">Search Profile</button>
-</form>
-
-<div *ngIf="login">
-    <p>
-       {{login.login}} 
-    </p>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.component.css" type="text/css">
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+    <h1><strong>GITHUB SEARCH</strong></h1>
 </div>
+<div class="row">
+    <div class="col-md-4">
+      <form>
+      <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Git Search Username">
+      <button (click)="searchProfile()" type="submit" class="btn btn-success btn sm">Search Profile</button>
+       </form>
+       <p>Type in a Github username above and click the button to see the owners name and their repositories.</p>
+    </div>
+  <div class="col-md-4">
+     <div *ngIf="login">
+      <p>
+       {{login.name}} 
+      </p>
+    </div>
+    <div class="col-md-4">  
+       <ul *ngFor="let repo of userepo ">
+        <li>{{ repo.name }}</li>
+       </ul>
+    </div>
+    </div>
+    </div>
+    
+</div>
+</body>
+</html>

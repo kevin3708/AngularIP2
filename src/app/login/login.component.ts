@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{ InfoRequestService } from '../github-http/info-request.service';
 import { User } from '../user-class/user';
-import {repository } from '../repo-class/repository';
+
 import { HttpClient } from '@angular/common/http';
 
 @Component({
