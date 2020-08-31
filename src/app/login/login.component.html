@@ -1,0 +1,10 @@
+<form>
+    <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Git Search">
+    <button (click)="searchProfile()" type="submit" class="btn btn-success btn sm">Search Profile</button>
+</form>
+
+<div *ngIf="login">
+    <p>
+       {{login.login}} 
+    </p>
+</div>
